@@ -1,0 +1,226 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+    <style>
+
+      body{
+          background-image: url(bck.jpg);
+          color: white;
+          background-repeat: no-repeat ;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+
+      h2{
+          text-align: left;
+          color:#fff;
+          font-size: 3.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 150px;
+      }
+
+
+      .container {
+      margin: 200px;
+      width: 25%;
+      justify-content: right;
+      color:#fff;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+      align-self: center;
+
+
+}
+
+.step {
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+background-color: cream;
+}
+
+.v-stepper {
+position: relative;
+/*   visibility: visible; */
+}
+
+
+/* regular step */
+.step .circle {
+background-color: white;
+border: 3px solid gray;
+border-radius: 100%;
+width: 20px;    /* +6 for border */
+height: 20px;
+display: inline-block;
+}
+
+.step .line {
+  top: 23px;
+left: 12px;
+/*   height: 120px; */
+height: 100%;
+  
+  position: absolute;
+  border-left: 3px solid gray;
+}
+
+.step.completed .circle {
+visibility: visible;
+background-color: rgb(6,150,215);
+border-color: rgb(6,150,215);
+}
+
+.step.completed .line {
+border-left: 3px solid rgb(6,150,215);
+}
+
+.step.active .circle {
+visibility: visible;
+border-color: rgb(6,150,215);
+}
+
+.step:last-child .line {
+border-left: 3px solid white;
+z-index: -1; /* behind the circle to completely hide */
+}
+
+.content {
+margin-left: 20px;
+display: inline-block;
+}
+
+  </style>
+
+    
+</head>
+<body>
+
+<h2>Turn Your Podcast Into Accessible <br>
+    Audio</h2>
+
+  <div class="container">
+    <!-- completed -->
+      <div class="step completed">
+        <div class="v-stepper">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+  
+        <div class="content">
+          
+          <h1>Transcription</h2>
+  Accurately transcribe your podcast episodes for easy searchability and accessibility
+        </div>
+    </div>
+    
+    <!-- active -->
+    <div class="step completed">
+      <div class="v-stepper">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+  
+      <div class="content">
+        <h1>Summarization</h1>
+  Generate concise summaries that highlight the key takeaways from each episode.
+      </div>
+    </div>
+    
+  
+    
+    <!-- regular -->
+    <div class="step completed">
+        <div class="v-stepper">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+  
+        <div class="content">
+          <h1>Speech Synthesis</h1>
+  Convert your transcripts into high-quality audio for on-the-go listening.
+        </div>
+    </div>
+    <div class="empty">
+        <div class="v-stepper">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+  
+        <div class="content">
+
+
+          <div>
+            <div class="container mt-5" id="wholeDiv">
+                <div id="firstDiv">
+                    <h1 class="custom-heading">Get a Video Transcript</h1>
+                    <form id="transcriptionForm" method="POST" action="/transcribe">
+                        <div class="input-group mb-3  inputDiv">
+                            <input type="text" id="videoURL" name="videoURL" class="form-control "
+                                placeholder="Enter Podcast URL">
+                            <button id="transcribeButton" class="btn btn-primary custom-button"
+                                type="submit">Transcribe -></button>
+                        </div>
+                    </form>
+                </div>
+                <div id="secondDiv">
+                    <button id="showButton" class="btn btn-primary">show video</button>
+                    <div id="videoPlayer"></div>
+                </div>
+    
+            </div>
+            <div id="transcriptionResult" class="result-box">
+                {% if transcript %}
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Transcript:</h4>
+                    <p>{{ transcript }}</p>
+                    <p>Length: {{ transcript_length }}</p>
+                </div>
+                {% endif %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Error:</h4>
+                    <p>{{ error }}</p>
+                </div>
+                {% endif %}
+            </div>
+    
+            <form id="summarizationForm" method="POST" action="/summarize">
+                <div class="input-group mb-3">
+                    <input type="hidden" id="transcript" name="transcript" value="{{ transcript }}">
+                    <button id="summarizeButton" class="btn btn-primary" type="submit">Summarize</button>
+                </div>
+            </form>
+    
+            <div id="summarizationResult" class="result-box">
+                {% if summary %}
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading">Summary:</h4>
+                    <p>{{ summary }}</p>
+                    <p>Length: {{ summary_length }}</p>
+                    <audio controls>
+                        <source src="/get_audio" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                {% endif %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Error:</h4>
+                    <p>{{ error }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+        <script src="/static/script.js"></script>
+    
+  </div>
+</body>
+</html>

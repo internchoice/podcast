@@ -1,0 +1,299 @@
+.result-box {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.smoke{
+  background-color: black;
+  color :white;
+}
+
+#wholeDiv{
+    /*background-color:rgba(94, 229, 124, 0.04);;*/
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.firstDiv{
+    display: flex;
+    width: 746px;
+    
+
+}
+#secondDiv{
+    display: flex;
+    align-items: center;
+    width: 746 px;
+}
+#inputDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.inputDiv {
+    width: 750px; /* Decrease input width as needed */
+}
+
+.inputDiv button {
+    background-color: green; /* Change button color to green */
+    border-radius: 49px; /* Add border radius */
+    width: 130px; /* Decrease button width as needed */
+    
+    border-radius: 163px;
+    height: 79px;
+    margin: 45px;
+}
+
+.custom-button {
+    
+    margin-bottom: 0;
+    border:1px solid black;
+    font-size: 20px;
+    transition: background-color .3s, color .3s;
+    
+}
+
+
+.custom-heading {
+    font-size: 50px; /* Increase font size */
+    font-family: Arial, sans-serif; /* Change font family */
+    color: white; /* Change text color */
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* input box */
+.form-control{
+    border-radius: 49px;
+    border: 1px solid white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 18px;
+    background-color: transparent;
+    height: 80px;
+    box-shadow: none;
+    outline: none;
+    margin: 10px 0 0 0 ;
+    width: 350px;
+    padding: 10px 28px 11px 28px;
+  
+}
+
+
+
+/* main csss start*/
+
+section{
+    background-image: url(bk.jpg);
+    color: black;
+    background-repeat: no-repeat ;
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  .smile
+{
+    font-size: 65px; 
+    color: #b084ff ;
+    font-family: "Times New Roman", Times, serif;
+           
+}
+.btn-get-started:hover {
+  background: #c851aa;
+  color:black;
+  box-shadow:0px 20px 40px #EEEB18;
+}
+
+.btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+  }
+
+  .btn-get-started {
+    
+    background: linear-gradient(97.83deg, #B326CA 14.98%, #4200FF 103.58%);
+    box-shadow: 9px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 49px;
+    font-weight: 500;
+    font-size: 18.5px;
+    font-family: "Jost", sans-serif;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    padding: 10px 28px 11px 28px;
+    position: sticky;
+    animation: anim1 6s;
+    margin: 150px;
+    margin-bottom: 1.6rem;
+    
+}
+
+
+
+h1{
+text-align: left;
+color:#fff;
+font-size: 3.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 200px;
+}
+.unlock{
+color: #fff;
+font-size: 1.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 150px;
+}
+
+
+
+/*main csss end*/
+
+
+
+
+/* new csss start*/
+
+  
+  h2{
+    text-align: left;
+    /*background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);*/
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  
+  .container {
+ 
+  width: 100%;
+  justify-content: right;
+  color:#fff;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  align-self: center;
+  background-color: black;
+  
+  
+  }
+
+  .container1 {
+    
+    margin: 100px;
+    width: 10%;
+}
+  
+  .step {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: cream;
+  }
+  
+  .v-stepper {
+  position: relative;
+  /*   visibility: visible; */
+  }
+  
+  
+  /* regular step */
+  .step .circle {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 20px;    /* +6 for border */
+  height: 20px;
+  display: inline-block;
+  }
+  
+  .step .line {
+  top: 23px;
+  left: 12px;
+  /*   height: 120px; */
+  height: 100%;
+  
+  position: absolute;
+  border-left: 3px solid gray;
+  }
+  
+  .step.completed .circle {
+  visibility: visible;
+  background-color: rgb(6,150,215);
+  border-color: rgb(6,150,215);
+  }
+  
+  .step.completed .line {
+  border-left: 3px solid rgb(6,150,215);
+  }
+  
+  .step.active .circle {
+  visibility: visible;
+  border-color: rgb(6,150,215);
+  }
+  
+  .step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+  }
+  
+  .content h1 {
+  margin-left: 15px;
+  display: flexbox;
+  }
+
+/* Wave effect start*/
+.home .wave{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    height:11rem;
+    width: 100%;
+    background: url(wave.jpeg);
+    background-size: 100rem 11rem;
+    background-repeat: repeat-x;
+    animation:waves 10s linear infinite;
+     animation-direction: alternate;
+  }
+  
+  .home .wave2{
+    animation-direction: reverse;
+    opacity: .2;
+  }
+  
+  .home .wave3{
+    animation-duration: 4s;
+    opacity: .5;
+  }
+  
+  @keyframes waves{
+    0%{
+      background-position-x: 0;
+    }
+    100%{
+      background-position-x: 100rem;
+    }
+  }
+  
+
+/* wave effect end*/
+
+

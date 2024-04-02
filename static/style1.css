@@ -1,0 +1,167 @@
+.result-box {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    
+}
+bod {
+    background: #eaafc8;
+    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+    background: linear-gradient(to right, #eaafc8, #654ea3);
+    min-height: 100vh;
+}
+
+.bod{
+  background-image: url(static/logo.jpg);
+}
+
+.home .wave{
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  height:11rem;
+  width: 100%;
+  background: url(wave.png);
+  background-size: 100rem 11rem;
+  background-repeat: repeat-x;
+  animation:waves 10s linear infinite;
+   animation-direction: alternate;
+}
+
+.home .wave2{
+  animation-direction: reverse;
+  opacity: .2;
+}
+
+.home .wave3{
+  animation-duration: 4s;
+  opacity: .5;
+}
+
+@keyframes waves{
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: 100rem;
+  }
+}
+
+h1{
+ /*background: linear-gradient(97.83deg, #B326CA 14.98%, #4200FF 103.58%);*/
+ font-size: 40px; 
+            font-family: Arial, Helvetica, sans-serif; 
+            background: linear-gradient(to right, #f32170, 
+                    #ff6b08, #cf23cf, #eedd44); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text; 
+  color: black;
+  font-size: 35px;
+  animation: mymove 6s infinite;
+  animation-direction: alternate;
+
+}
+
+@keyframes mymove {
+  from {padding-left: 400px;}
+  to {padding-right: 400px;}
+}
+
+
+/* new csss start*/
+
+
+body{
+  background-image: url(bck.jpg);
+  color: white;
+  background-repeat: no-repeat ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2{
+  text-align: left;
+  color:#fff;
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+
+.container {
+margin: 200px;
+width: 25%;
+justify-content: right;
+color:#fff;
+align-items: center;
+flex-wrap: wrap-reverse;
+align-self: center;
+
+
+}
+
+.step {
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+background-color: cream;
+}
+
+.v-stepper {
+position: relative;
+/*   visibility: visible; */
+}
+
+
+/* regular step */
+.step .circle {
+background-color: white;
+border: 3px solid gray;
+border-radius: 100%;
+width: 20px;    /* +6 for border */
+height: 20px;
+display: inline-block;
+}
+
+.step .line {
+top: 23px;
+left: 12px;
+/*   height: 120px; */
+height: 100%;
+
+position: absolute;
+border-left: 3px solid gray;
+}
+
+.step.completed .circle {
+visibility: visible;
+background-color: rgb(6,150,215);
+border-color: rgb(6,150,215);
+}
+
+.step.completed .line {
+border-left: 3px solid rgb(6,150,215);
+}
+
+.step.active .circle {
+visibility: visible;
+border-color: rgb(6,150,215);
+}
+
+.step:last-child .line {
+border-left: 3px solid white;
+z-index: -1; /* behind the circle to completely hide */
+}
+
+.content {
+margin-left: 20px;
+display: inline-block;
+}
+/*  new csss end*/
+
+/* new css end*/
+   
